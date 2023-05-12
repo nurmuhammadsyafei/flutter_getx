@@ -75,7 +75,7 @@ class HomeView extends GetView<HomeController> {
           // },
           // )
           GridView.builder(
-        itemCount: 10,
+        itemCount: 7,
         padding: const EdgeInsets.all(20),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
@@ -104,6 +104,11 @@ class HomeView extends GetView<HomeController> {
               ontep = () => Get.toNamed(Routes.halamanKetiga);
               break;
             case 3:
+              title = "Jadwal Sholat";
+              icon = Icons.mosque;
+              ontep = () => Get.toNamed(Routes.jadwalsholat);
+              break;
+            case 4:
               title = "Tambah Produk";
               icon = Icons.home;
               ontep = () {

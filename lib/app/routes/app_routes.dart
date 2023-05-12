@@ -7,6 +7,7 @@ abstract class Routes {
   static const halamanKedua = _Paths.halamanKedua;
   static const halamanKetiga = _Paths.halamanKetiga;
   static const snackbarstyle = _Paths.snackbarstyle;
+  static const jadwalsholat = _Paths.jadwalsholat;
 }
 
 abstract class _Paths {
@@ -15,4 +16,5 @@ abstract class _Paths {
   static const halamanKedua = '/halaman-kedua';
   static const halamanKetiga = '/halaman-ketiga';
   static const snackbarstyle = '/snackbarstyle';
+  static const jadwalsholat = '/jadwalsholat';
 }

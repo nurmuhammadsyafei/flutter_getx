@@ -6,6 +6,8 @@ import '../modules/halaman_ketiga/bindings/halaman_ketiga_binding.dart';
 import '../modules/halaman_ketiga/views/halaman_ketiga_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/jadwalsholat/bindings/jadwalsholat_binding.dart';
+import '../modules/jadwalsholat/views/jadwalsholat_view.dart';
 import '../modules/snackbarstyle/bindings/snackbarstyle_binding.dart';
 import '../modules/snackbarstyle/views/snackbarstyle_view.dart';
 
@@ -36,6 +38,11 @@ class AppPages {
       name: _Paths.snackbarstyle,
       page: () => const SnackbarstyleView(),
       binding: SnackbarstyleBinding(),
+    ),
+    GetPage(
+      name: _Paths.jadwalsholat,
+      page: () => const JadwalsholatView(),
+      binding: JadwalsholatBinding(),
     ),
   ];
 }
