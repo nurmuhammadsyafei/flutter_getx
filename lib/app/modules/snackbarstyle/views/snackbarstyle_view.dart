@@ -13,6 +13,11 @@ class SnackbarstyleView extends GetView<SnackbarstyleController> {
         appBar: AppBar(
           title: const Text('HomeView'),
           centerTitle: true,
+          leading: IconButton(
+              onPressed: () {
+                Get.offAllNamed(Routes.home);
+              },
+              icon: Icon(Icons.arrow_back_ios_new)),
         ),
         body: ListView(
           // scrollDirection: Axis.horizontal,

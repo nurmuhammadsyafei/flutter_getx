@@ -24,7 +24,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.halamanKedua,
-      page: () => const HalamanKeduaView(),
+      page: () => HalamanKeduaView(),
       binding: HalamanKeduaBinding(),
     ),
     GetPage(

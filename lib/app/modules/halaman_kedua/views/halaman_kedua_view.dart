@@ -6,7 +6,10 @@ import 'package:get/get.dart';
 import '../controllers/halaman_kedua_controller.dart';
 
 class HalamanKeduaView extends GetView<HalamanKeduaController> {
-  const HalamanKeduaView({Key? key}) : super(key: key);
+  HalamanKeduaView({Key? key}) : super(key: key);
+  final TextEditingController codeC = TextEditingController();
+  final TextEditingController namaC = TextEditingController();
+  final TextEditingController qtyC = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,18 +25,28 @@ class HalamanKeduaView extends GetView<HalamanKeduaController> {
             },
           ),
         ),
-        body: Row(
-          children: <Widget>[
-            IntrinsicHeight(
-              child: Row(
-                children: <Widget>[
-                  // FloatingActionButton(
-                  //   onPressed: () {},
-                  //   child: Icon(Icons.arrow_back_ios_new),
-                  // )
-                  ElevatedButton(onPressed: () {}, child: Text("Back to Home"))
-                ],
-              ),
+        body: ListView(
+          padding: const EdgeInsets.all(20),
+          children: [
+            TextField(
+              autocorrect: false,
+              controller: codeC,
+              keyboardType: TextInputType.number,
+              maxLength: 10,
+              decoration: InputDecoration(
+                  labelText: "Kode Produk",
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(9))),
+            ),
+            TextField(
+              autocorrect: false,
+              controller: codeC,
+              keyboardType: TextInputType.number,
+              maxLength: 10,
+              decoration: InputDecoration(
+                  labelText: "Kode Produk",
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(9))),
             )
           ],
         ));
