@@ -109,11 +109,9 @@ class HomeView extends GetView<HomeController> {
               ontep = () => Get.toNamed(Routes.jadwalsholat);
               break;
             case 4:
-              title = "Tambah Produk";
+              title = "Home Statefull";
               icon = Icons.home;
-              ontep = () {
-                print("Tambah Produk");
-              };
+              ontep = () => Get.toNamed(Routes.home_stateful);
               break;
             default:
               title = "unknow";

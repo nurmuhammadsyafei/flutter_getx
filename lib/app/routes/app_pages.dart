@@ -6,6 +6,8 @@ import '../modules/halaman_ketiga/bindings/halaman_ketiga_binding.dart';
 import '../modules/halaman_ketiga/views/halaman_ketiga_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/home_stateful/bindings/home_stateful_binding.dart';
+import '../modules/home_stateful/views/home_stateful_view.dart';
 import '../modules/jadwalsholat/bindings/jadwalsholat_binding.dart';
 import '../modules/jadwalsholat/views/jadwalsholat_view.dart';
 import '../modules/snackbarstyle/bindings/snackbarstyle_binding.dart';
@@ -43,6 +45,11 @@ class AppPages {
       name: _Paths.jadwalsholat,
       page: () => const JadwalsholatView(),
       binding: JadwalsholatBinding(),
+    ),
+    GetPage(
+      name: _Paths.home_stateful,
+      page: () => HomeStatefulView(),
+      binding: HomeStatefulBinding(),
     ),
   ];
 }
