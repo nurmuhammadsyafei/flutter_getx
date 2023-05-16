@@ -75,7 +75,7 @@ class HomeView extends GetView<HomeController> {
           // },
           // )
           GridView.builder(
-        itemCount: 7,
+        itemCount: 9,
         padding: const EdgeInsets.all(20),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
@@ -112,6 +112,16 @@ class HomeView extends GetView<HomeController> {
               title = "Home Statefull";
               icon = Icons.home;
               ontep = () => Get.toNamed(Routes.home_stateful);
+              break;
+            case 5:
+              title = "radio";
+              icon = Icons.radio_button_checked;
+              ontep = () => Get.toNamed(Routes.radio);
+              break;
+            case 6:
+              title = "Login";
+              icon = Icons.login;
+              ontep = () => Get.toNamed(Routes.login);
               break;
             default:
               title = "unknow";

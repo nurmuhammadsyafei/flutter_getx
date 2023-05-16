@@ -9,6 +9,10 @@ abstract class Routes {
   static const snackbarstyle = _Paths.snackbarstyle;
   static const jadwalsholat = _Paths.jadwalsholat;
   static const home_stateful = _Paths.home_stateful;
+  static const radio = _Paths.radio;
+  static const login = _Paths.login;
+  static const formsubmit = _Paths.formsubmit;
+  static const datepicker = _Paths.datepicker;
 }
 
 abstract class _Paths {
@@ -19,4 +23,8 @@ abstract class _Paths {
   static const snackbarstyle = '/snackbarstyle';
   static const jadwalsholat = '/jadwalsholat';
   static const home_stateful = '/home-stateful';
+  static const radio = '/radio';
+  static const login = '/login';
+  static const formsubmit = '/formsubmit';
+  static const datepicker = '/datepicker';
 }

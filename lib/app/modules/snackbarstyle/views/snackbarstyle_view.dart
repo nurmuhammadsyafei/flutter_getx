@@ -43,10 +43,16 @@ class SnackbarstyleView extends GetView<SnackbarstyleController> {
                   // color: Colors.purpleAccent,
                   padding: EdgeInsets.only(left: 10, right: 10),
                   child: ElevatedButton(
-                    onPressed: () {
-                      Get.offAllNamed(Routes.home);
-                    },
-                    child: Text("Halaman Home"),
+                    onPressed: () => functAlert1(context),
+                    child: Text("Alert 1"),
+                  ),
+                ),
+                Container(
+                  // color: Colors.purpleAccent,
+                  padding: EdgeInsets.only(left: 10, right: 10),
+                  child: ElevatedButton(
+                    onPressed: () => {},
+                    child: Text("unknow"),
                   ),
                 ),
               ],
@@ -66,6 +72,26 @@ cobafunction(context) {
           // Code to execute.
         },
       ),
+    ),
+  );
+}
+
+functAlert1(context) {
+  showDialog<String>(
+    context: context,
+    builder: (BuildContext context) => AlertDialog(
+      title: const Text('AlertDialog Title'),
+      content: const Text('AlertDialog description'),
+      actions: <Widget>[
+        TextButton(
+          onPressed: () => Navigator.pop(context, 'Cancel'),
+          child: const Text('Cancel'),
+        ),
+        TextButton(
+          onPressed: () => Navigator.pop(context, 'OK'),
+          child: const Text('OK'),
+        ),
+      ],
     ),
   );
 }
