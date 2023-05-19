@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import '../controllers/radio_controller.dart';
+import '../../../data/element/myelement.dart';
 
 class RadioView extends StatefulWidget {
   const RadioView({super.key});
@@ -10,7 +11,21 @@ class RadioView extends StatefulWidget {
   State<RadioView> createState() => _RadioView();
 }
 
-enum SingingCharacter { pedro, villa, messi, ronaldo }
+enum SingingCharacter {
+  compo,
+  rod,
+  tube,
+  grindinGrod,
+  cuttinGrod,
+  cuttinGroundbar,
+  facingThreading,
+  threadingMiniNL05,
+  facingCenterLH01,
+  facingCenterLH02,
+  threadingMiniNL11,
+  frinction,
+  weldingRodHead
+}
 
 class _RadioView extends State<RadioView> {
   // const _RadioView({Key? key}) : super(key: key);
@@ -22,7 +37,8 @@ class _RadioView extends State<RadioView> {
   //   text: "admin@gmail.com",
   // );
 
-  SingingCharacter? _character = SingingCharacter.pedro;
+  SingingCharacter? _character = SingingCharacter.compo;
+  SingingCharacter? _processProd = SingingCharacter.compo;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -64,7 +80,7 @@ class _RadioView extends State<RadioView> {
                 container1(),
                 Container(
                   width: 220,
-                  height: 220,
+                  height: 420,
                   margin: EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -72,19 +88,16 @@ class _RadioView extends State<RadioView> {
                   ),
                   child: ListView(
                     children: [
+                      myTextLeft("1.Date"),
                       Padding(
                         padding: EdgeInsets.all(16.0),
                         child: Column(
+                          // textAlign: TextAlign.right,
                           children: [
                             TextField(
                               controller: dateinput,
-                              // initialValue: dateinput,
-                              // initialValue: dateinput,
-                              // date
-
                               decoration: InputDecoration(
                                 icon: Icon(Icons.calendar_today),
-                                labelText: "enterdate",
                               ),
                               readOnly: true,
                               onTap: () async {
@@ -102,9 +115,87 @@ class _RadioView extends State<RadioView> {
                                 }
                               },
                             ),
+                            MyElement.myDivider20(),
                           ],
                         ),
                       ),
+                      myTextLeft("1.Line Produksi"),
+
+                      ListTile(
+                        title: const Text('COMPO'),
+                        leading: Radio<SingingCharacter>(
+                          value: SingingCharacter.compo,
+                          groupValue: _character,
+                          onChanged: (SingingCharacter? value) {
+                            setState(() {
+                              _character = value;
+                            });
+                            print(_character);
+                          },
+                        ),
+                      ),
+                      ListTile(
+                        title: const Text('ROD'),
+                        leading: Radio<SingingCharacter>(
+                          value: SingingCharacter.rod,
+                          groupValue: _character,
+                          onChanged: (SingingCharacter? value) {
+                            setState(() {
+                              _character = value;
+                            });
+                            print(_character);
+                          },
+                        ),
+                      ),
+                      ListTile(
+                        title: const Text('TUBE'),
+                        leading: Radio<SingingCharacter>(
+                          value: SingingCharacter.tube,
+                          groupValue: _character,
+                          onChanged: (SingingCharacter? value) {
+                            setState(() {
+                              _character = value;
+                            });
+                            print(_character);
+
+                            ExFunct(_character, SingingCharacter.tube);
+                          },
+                        ),
+                      ),
+                      myTextLeft("3.Process Prod"),
+
+                      ListTile(
+                        title: const Text('Grindin Grod (GRD01)'),
+                        leading: Radio<SingingCharacter>(
+                          value: SingingCharacter.grindinGrod,
+                          groupValue: _processProd,
+                          onChanged: (SingingCharacter? value) {
+                            setState(() {
+                              _processProd = value;
+                            });
+                            print(_processProd);
+
+                            ExFunct(_processProd, SingingCharacter.grindinGrod);
+                          },
+                        ),
+                      ),
+                      
+                      ListTile(
+                        title: const Text('Cuttin Grod (BS03)'),
+                        leading: Radio<SingingCharacter>(
+                          value: SingingCharacter.cuttinGrod,
+                          groupValue: _processProd,
+                          onChanged: (SingingCharacter? value) {
+                            setState(() {
+                              _processProd = value;
+                            });
+                            print(_processProd);
+
+                            ExFunct(_processProd, SingingCharacter.cuttinGrod);
+                          },
+                        ),
+                      ),
+                      // myRadio(_processProd, SingingCharacter.grindinGrod)
                       Container(
                         width: 90,
                         height: 90,
@@ -115,30 +206,22 @@ class _RadioView extends State<RadioView> {
                         ),
                         child: TextField(
                           autocorrect: false,
-                          // controller: codeC,
                           keyboardType: TextInputType.number,
                           maxLength: 10,
-                          // decoration: InputDecoration(
-                          //   labelText: "1. Date",
-                          //   labelStyle: TextStyle(fontSize: 20),
-                          //   border: OutlineInputBorder(
-                          //     borderRadius: BorderRadius.circular(9),
-                          //   ),
-                          // ),
                         ),
                       )
                     ],
                   ),
                 ),
-                Container(
-                  width: 200,
-                  height: 200,
-                  margin: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 148, 235, 107),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
+                // Container(
+                //   width: 200,
+                //   height: 200,
+                //   margin: EdgeInsets.all(10),
+                //   decoration: BoxDecoration(
+                //     color: Color.fromARGB(255, 148, 235, 107),
+                //     borderRadius: BorderRadius.circular(10),
+                //   ),
+                // ),
               ],
             )));
   }
@@ -213,6 +296,38 @@ container1() {
   );
 }
 
+myTextLeft(textnya) {
+  return Center(
+    child: Align(
+      alignment: Alignment.centerLeft,
+      child: Text(
+        textnya,
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 20,
+        ),
+      ),
+    ),
+  );
+}
+
+// myRadio(group, value) {
+//   ListTile(
+//     title: const Text('TUBE'),
+//     leading: Radio<SingingCharacter>(
+//       value: value,
+//       groupValue: group,
+//       onChanged: (SingingCharacter? value) {
+//         setState(() {
+//           group = value;
+//         });
+//         print(group);
+
+//         // ExFunct(group, value);
+//       },
+//     ),
+//   );
+// }
 // Widget container2() {
 //   return ListView(
 //     children: [
